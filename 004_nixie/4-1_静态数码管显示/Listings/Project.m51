@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/11/2024  16:50:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\0_FILESYSTEM\500_PCFILES\510_SOFTWARE\KEIL5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\Project PRINT (.\Listing
+>> s\Project.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  D:\0_FILESYSTEM\500_PCFILES\510_SOFTWARE\KEIL5\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\0_FILESYSTEM\500_PCFILES\510_SOFTWARE\KEIL5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\Project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+            IDATA   001CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    00F9H     0084H     UNIT         ?PR?_LED?MAIN
+            CODE    017DH     0010H     UNIT         ?CO?MAIN
+            CODE    018DH     000DH     UNIT         ?PR?MAIN?MAIN
+            CODE    019AH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Project (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  -----    -----
+  +--> ?PR?_LED?MAIN
+
+?PR?_LED?MAIN                  0008H    0014H
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/11/2024  16:50:33  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  B:00A0H.2       PUBLIC        P2_2
+  B:00A0H.3       PUBLIC        P2_3
+  B:00A0H.4       PUBLIC        P2_4
+  C:018DH         PUBLIC        main
+  C:00F9H         PUBLIC        _led
+  C:017DH         SYMBOL        _?ix1000
+  -------         PROC          _LED
+  D:0008H         SYMBOL        id
+  D:000AH         SYMBOL        num
+  -------         DO            
+  D:000CH         SYMBOL        nixie_show
+  -------         ENDDO         
+  C:00F9H         LINE#         3
+  C:0101H         LINE#         4
+  C:0101H         LINE#         5
+  C:0114H         LINE#         7
+  C:0146H         LINE#         8
+  C:0146H         LINE#         9
+  C:014AH         LINE#         10
+  C:014EH         LINE#         11
+  C:0152H         LINE#         12
+  C:0156H         LINE#         13
+  C:015EH         LINE#         14
+  C:0166H         LINE#         15
+  C:016EH         LINE#         16
+  C:0174H         LINE#         17
+  C:0174H         LINE#         18
+  C:0174H         LINE#         20
+  C:017CH         LINE#         22
+  -------         ENDPROC       _LED
+  -------         PROC          MAIN
+  C:018DH         LINE#         24
+  C:018DH         LINE#         25
+  C:018DH         LINE#         26
+  C:0198H         LINE#         27
+  C:0198H         LINE#         28
+  C:0198H         LINE#         30
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+Program Size: data=29.0 xdata=0 code=422
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

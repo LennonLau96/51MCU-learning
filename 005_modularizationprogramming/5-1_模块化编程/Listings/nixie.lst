@@ -1,0 +1,50 @@
+C51 COMPILER V9.54   NIXIE                                                                 08/08/2024 17:23:43 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE NIXIE
+OBJECT MODULE PLACED IN .\Objects\nixie.obj
+COMPILER INVOKED BY: D:\0_FileSystem\500_PCfiles\510_software\Keil5\C51\BIN\C51.EXE nixie.c OPTIMIZE(8,SPEED) BROWSE DEB
+                    -UG OBJECTEXTEND PRINT(.\Listings\nixie.lst) TABS(2) OBJECT(.\Objects\nixie.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "Delay.h"
+   3          
+   4          void led(int id, int num)
+   5          {
+   6   1        char nixie_show[17] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E
+             -, 0x79, 0x71, 0x00};
+   7   1        
+   8   1        switch (id)
+   9   1        {
+  10   2          case 1: P2_4 = 1; P2_3 = 1; P2_2 = 1; break;
+  11   2          case 2: P2_4 = 1; P2_3 = 1; P2_2 = 0; break;
+  12   2          case 3: P2_4 = 1; P2_3 = 0; P2_2 = 1; break;
+  13   2          case 4: P2_4 = 1; P2_3 = 0; P2_2 = 0; break;
+  14   2          case 5: P2_4 = 0; P2_3 = 1; P2_2 = 1; break;
+  15   2          case 6: P2_4 = 0; P2_3 = 1; P2_2 = 0; break;
+  16   2          case 7: P2_4 = 0; P2_3 = 0; P2_2 = 1; break;
+  17   2          case 8: P2_4 = 0; P2_3 = 0; P2_2 = 0; break;
+  18   2          default: break;
+  19   2        }
+  20   1        
+  21   1        P0 = nixie_show[num];
+  22   1        Delay(1);
+  23   1        P0 = 0x00;
+  24   1          
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      21
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
